@@ -1,9 +1,2 @@
-<%= form_with model: @user do |f| %>
-  <%= f.label(:username) %>
-  <%= f.text_field(:username, placeholder: 'example123') %><br>
-  <%= f.label(:email) %>
-  <%= f.text_field(:email, placeholder: 'example@mail.com') %><br>
-  <%= f.label(:password) %>
-  <%= f.password_field(:password, placeholder: 'supersecretpassword') %><br>
-  <%= f.submit('Submit') %>
-<% end %>
+<h1>Edit User Form</h1>
+<%= render partial: "user", locals: {user: @user} %>
