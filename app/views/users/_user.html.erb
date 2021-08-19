@@ -6,4 +6,16 @@
   <%= f.label(:password) %>
   <%= f.password_field(:password, placeholder: 'supersecretpassword') %><br>
   <%= f.submit('Submit') %>
+
+  <% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+      <% user.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 <% end %>
